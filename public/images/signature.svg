@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="140" viewBox="0 0 480 140" fill="none" role="img" aria-label="Şule Alp imza">
+  <text
+    x="8"
+    y="88"
+    fill="#171412"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="72"
+    font-style="italic"
+    font-weight="400"
+    letter-spacing="-1.5"
+  >Şule Alp</text>
+  <path d="M24 108 C90 118, 170 120, 250 112" stroke="#AA6851" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+</svg>

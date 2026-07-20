@@ -1,0 +1,519 @@
+export type PressCategory = "televizyon" | "roportaj" | "haber" | "makale";
+
+export type PressItem = {
+  slug: string;
+  title: string;
+  publication: string;
+  date: string; // ISO — yaklaşık arşiv tarihi (doğrulama TODO)
+  category: PressCategory;
+  url: string;
+  image?: string;
+  excerpt: string;
+  body?: string[];
+  featured?: boolean;
+};
+
+export const pressCategoryLabels: Record<PressCategory | "all", string> = {
+  all: "Tümü",
+  televizyon: "Televizyon",
+  roportaj: "Röportaj",
+  haber: "Haber",
+  makale: "Makale",
+};
+
+export const pressItems: PressItem[] = [
+  {
+    slug: "kentler-donusuyor-cnbc-e",
+    title: "Kentsel Dönüşümün Nabzı Yaz Boyunca CNBC-e Ekranlarında",
+    publication: "Konut Trend",
+    date: "2025-06-25",
+    category: "haber",
+    url: "https://www.konuttrend.com/kentsel-donusumun-nabzi-yaz-boyunca-cnbc-e-ekranlarinda-atacak",
+    image: "/images/press/kentler-donusuyor.jpg",
+    excerpt:
+      "Gayrimenkul Uzmanı Şule Alp’in sunduğu “Kentler Dönüşüyor” programı, yaz boyunca CNBC-e ekranlarında izleyiciyle buluşuyor.",
+    body: [
+      "CNBC-e’de yayınlanan “Kentler Dönüşüyor” programının sunuculuğunu Gayrimenkul Uzmanı Şule Alp üstleniyor.",
+      "Program; kentsel dönüşüm projeleri, şehir planlama stratejileri, gayrimenkul yatırımları ve yeni nesil yaşam alanlarını ele alıyor.",
+      "Yayın akışı: Cumartesi 14.30 ve Pazar 09.30.",
+    ],
+    featured: true,
+  },
+  {
+    slug: "kentler-donusuyor-ekoyapi",
+    title: "Kentsel Dönüşümün Nabzı Ekranlarda Atacak",
+    publication: "Eko Yapı Dergisi",
+    date: "2025-06-25",
+    category: "haber",
+    url: "https://www.ekoyapidergisi.org/kentsel-donusumun-nabzi-ekranlarda-atacak",
+    image: "/images/press/kentler-donusuyor.jpg",
+    excerpt:
+      "Şule Alp’in sunduğu program; mimarlar, plancılar, sektör temsilcileri ve akademisyenleri dönüşümün perde arkasına taşıyor.",
+    featured: true,
+  },
+  {
+    slug: "klass-magazin-cnbc-e",
+    title: "Lüks Gayrimenkul Uzmanı Şule Alp CNBC-e Ekranlarında",
+    publication: "KLASS Magazin",
+    date: "2025-06-25",
+    category: "roportaj",
+    url: "https://www.klassmagazin.com/cemiyet-ve-is-dunyasinin-basarili-ismi-luks-gayrimenkul-uzmani-sule-alp-yaz-boyunca-cnbc-e-ekranlarinda-olacak",
+    image: "/images/press/kentler-donusuyor.jpg",
+    excerpt:
+      "Kentlerin değişen silueti ve sektörün geleceği, Şule Alp’in sunduğu “Kentler Dönüşüyor” ile ekranlara taşınıyor.",
+    featured: true,
+  },
+  {
+    slug: "kentler-donusuyor-program",
+    title: "Kentler Dönüşüyor — Program Tanıtımı",
+    publication: "CNBC-e",
+    date: "2025-06-01",
+    category: "televizyon",
+    url: "https://www.konuttrend.com/kentsel-donusumun-nabzi-yaz-boyunca-cnbc-e-ekranlarinda-atacak",
+    image: "/images/press/kentler-donusuyor.jpg",
+    excerpt:
+      "Kentsel dönüşüm, planlama ve yatırım gündemini ele alan televizyon programı.",
+    body: [
+      "“Kentler Dönüşüyor”, Türkiye’de hız kazanan kentsel dönüşüm sürecini ekrana taşıyan bir CNBC-e programıdır.",
+      "Sunuculuğunu Gayrimenkul Uzmanı Şule Alp yürütmektedir.",
+    ],
+  },
+  {
+    slug: 'milliyet-bddkdan-yeni-adim-kredilerde-dikkat-ceken-yuzde-75-karari-6997291',
+    title: 'BDDK’dan yeni adım: Kredilerde dikkat çeken yüzde 75 kararı',
+    publication: 'Milliyet',
+    date: '2023-06-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/ekonomi/bddkdan-yeni-adim-kredilerde-dikkat-ceken-yuzde-75-karari-6997291',
+    excerpt:
+      'Bankacılık Düzenleme ve Denetleme Kurulu (BDDK) tarafından alınan kararla ikinci evlerini alacak vatandaşlar için kredilerde değişikliğe gidildi. Peki bu karara gayrimenkul uzma…',
+  },
+  {
+    slug: 'yenigungazetesi-kiralar-dusecek-mi-isin-uzmani-net-aciklamalar-yapti-105520h',
+    title: 'Kiralar düşecek mi? İşin uzmanı net açıklamalar yaptı',
+    publication: 'Yeni Gün Gazetesi',
+    date: '2023-06-15',
+    category: 'haber',
+    url: 'https://www.yenigungazetesi.net/ekonomi/kiralar-dusecek-mi-isin-uzmani-net-aciklamalar-yapti-105520h',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'milliyet-gayrimenkul-sektoru-sonuclardan-memnun-6948326',
+    title: 'Gayrimenkul sektörü sonuçlardan memnun',
+    publication: 'Milliyet',
+    date: '2023-05-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/ekonomi/gayrimenkul-sektoru-sonuclardan-memnun-6948326',
+    excerpt:
+      'Gayrimenkul Uzmanı Şule Alp, seçim sonuçlarına göre meclis ekseriyetinin yeniden Cumhur İttifakında bulunması, gayrimenkul sektöründe ki belirsizliğin sona ererek, hareketlenmes…',
+  },
+  {
+    slug: 'hurriyet-gayrimenkul-sektoru-sonuclardan-memnun-42267866',
+    title: 'Gayrimenkul sektörü sonuçlardan memnun',
+    publication: 'Hürriyet',
+    date: '2023-05-15',
+    category: 'haber',
+    url: 'https://www.hurriyet.com.tr/ekonomi/gayrimenkul-sektoru-sonuclardan-memnun-42267866',
+    excerpt:
+      'Gayrimenkul Uzmanı Şule Alp, seçim sonuçlarına göre meclis ekseriyetinin yeniden Cumhur İttifakında bulunması, gayrimenkul sektöründe ki belirsizliğin sona...',
+  },
+  {
+    slug: 'milliyet-depremden-sonra-yazlik-yerlerde-kiralik-ve-satilik-ev-fiyatlari-yukseldi-6917629',
+    title: 'Depremden sonra yazlık yerlerde kiralık ve satılık ev fiyatları yükseldi',
+    publication: 'Milliyet',
+    date: '2023-02-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/ekonomi/depremden-sonra-yazlik-yerlerde-kiralik-ve-satilik-ev-fiyatlari-yukseldi-6917629',
+    excerpt:
+      'Depremlerinin ardından yazlık yerlere gelen depremzedelerin kiralık ve satılık evlere ilgi gösterdiğini belirten gayrimenkul uzmanı Şule Alp, bu durumun emlak piyasasını yükselt…',
+  },
+  {
+    slug: 'iha-gayrimenkul-sektoru-noterlerle-birlikte-rahatlayacak-13144883',
+    title: 'Gayrimenkul sektörü noterlerle birlikte rahatlayacak',
+    publication: 'İHA',
+    date: '2023-02-15',
+    category: 'haber',
+    url: 'https://www.iha.com.tr/ankara-haberleri/gayrimenkul-sektoru-noterlerle-birlikte-rahatlayacak-13144883',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'iha-haber-gayrimenkul-uzmani-alp-bankalar-konutta-kredi-musluklarini-acmali-1152317',
+    title: 'Gayrimenkul uzmanı Alp: \'Bankalar konutta kredi musluklarını açmalı\'',
+    publication: 'İHA',
+    date: '2023-02-15',
+    category: 'haber',
+    url: 'https://www.iha.com.tr/haber-gayrimenkul-uzmani-alp-bankalar-konutta-kredi-musluklarini-acmali-1152317',
+    excerpt:
+      'Bankacılık Düzenleme ve Denetleme Kurumunun (BDDK) konut kredileri ilgili aldığı yeni kararı değerlendiren Gayrimenkul Uzmanı Şule Alp, “Bu şekilde açıklanan ama uygulanamayan k…',
+  },
+  {
+    slug: 'iha-haber-gayrimenkul-uzmani-sule-alp-uyariyor-1150463',
+    title: 'Haber Gayrimenkul Uzmani Sule Alp Uyariyor',
+    publication: 'İHA',
+    date: '2023-02-15',
+    category: 'haber',
+    url: 'https://www.iha.com.tr/haber-gayrimenkul-uzmani-sule-alp-uyariyor-1150463',
+    excerpt:
+      'Kahramanmaraş merkezli depremlerde 11 ilde hasar ve can kaybı meydana gelirken, binalardaki çatlak ve müdahalelerin incelenmesi gerektiğinin altını çizen Gayrimenkul Danışmanı Ş…',
+  },
+  {
+    slug: 'iha-torba-yasa-oncesinde-gayrimenkul-alim-firsati-veriyor-29532392',
+    title: 'Torba yasa öncesinde gayrimenkul alım fırsatı veriyor',
+    publication: 'İHA',
+    date: '2023-02-15',
+    category: 'haber',
+    url: 'https://www.iha.com.tr/ankara-haberleri/torba-yasa-oncesinde-gayrimenkul-alim-firsati-veriyor-29532392',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'yeniakit-2023-gayrimenkulde-altin-yil-olacak-1721883',
+    title: '‘2023 gayrimenkulde altın yıl olacak’',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/2023-gayrimenkulde-altin-yil-olacak-1721883.html',
+    excerpt:
+      'Orta gelirlilere yönelik ‘Yeni Evim Kampanyası’nın detayları açıklandı. Projede tüm bölgelerde asgari peşinat oranı yüzde 10 olarak belirlendi. Azami 15 sene vadeyle sağlanacak …',
+  },
+  {
+    slug: 'yeniakit-bodrumdaki-kiralik-evlerde-ilginc-taktik-1724342',
+    title: 'Bodrum’daki kiralık evlerde ilginç taktik',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/bodrumdaki-kiralik-evlerde-ilginc-taktik-1724342.html',
+    excerpt:
+      'Bodrum’da yaz-kış yaşayan yerlilerin kiralık ev bulmaları imkânsız hale geldi. Öyle ki bazı ev sahipleri, yaz sezonunda daha fazla para kazanmak için mayısta çıkma şartıyla ev k…',
+  },
+  {
+    slug: 'yeniakit-bu-hatayi-yapmayin-ev-alacaklarin-kulagina-kupe-olsun-1777282',
+    title: 'Bu hatayı yapmayın! Ev alacakların kulağına küpe olsun',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/bu-hatayi-yapmayin-ev-alacaklarin-kulagina-kupe-olsun-1777282.html',
+    excerpt:
+      'Gayrimenkul Uzmanı Şule Alp Duman, sahte ilanlarla fiyat yükseltmeye çalışanlara karşı vatandaşları uyararak, "Ev fiyatlarını yüksek göstermek için sahte ilanlarla spekülatif pe…',
+  },
+  {
+    slug: 'yeniakit-ev-kiralariyla-ilgili-cok-onemli-uyari-1738910',
+    title: 'Ev kiralarıyla ilgili çok önemli uyarı',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/ev-kiralariyla-ilgili-cok-onemli-uyari-1738910.html',
+    excerpt:
+      'Gayrimenkul Uzmanı Şule Alp, ev kira artışlarının yüzde 25’den fazla yapılamayacağını hatırlatarak, "Deprem sonrasında yaşanan göçle birlikte kira artışlarından etkilenen vatand…',
+  },
+  {
+    slug: 'yeniakit-ev-sahibinin-oyununu-posta-yoluyla-asin-1721309',
+    title: 'Ev sahibinin oyununu \'posta\' yoluyla aşın!',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/ev-sahibinin-oyununu-posta-yoluyla-asin-1721309.html',
+    excerpt:
+      'Ev sahipleri, yüksek kira taleplerini kabul etmeyen kiracılarını çıkarmak için bu kez de banka hesaplarını kapatarak ‘Kiramı ödemedin, evi tahliye et’ yöntemine başvurmaya başla…',
+  },
+  {
+    slug: 'yeniakit-iste-dolandiricilarin-yeni-tezgahi-yeni-evim-kampanyasina-basvuracaklar-dikkat-17',
+    title: 'İşte dolandırıcıların yeni tezgahı! \'Yeni Evim\' kampanyasına başvuracaklar dikkat',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/iste-dolandiricilarin-yeni-tezgahi-yeni-evim-kampanyasina-basvuracaklar-dikkat-1725839.html',
+    excerpt:
+      'Geçtiğimiz hafta başlayan Yeni Evim Kampanyası’na başvuracak vatandaşları hedef alan dolandırıcılar, krediye uygun olmayan evleri, kampanya dahilinde yalanıyla satmaya çalışıyor…',
+  },
+  {
+    slug: 'yeniakit-kiralik-daire-ev-fiyati-dusecek-diyen-gayrimenkul-uzmani-sebebini-boyle-anlatti-b',
+    title: 'Kiralık daire, ev fiyatı düşecek diyen Gayrimenkul Uzmanı sebebini böyle anlattı! \'Boşaltacakları kiralık evler...\'',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/kiralik-daire-ev-fiyati-dusecek-diyen-gayrimenkul-uzmani-sebebini-boyle-anlatti-bosaltacaklari-kiralik-evler-1763134.html',
+    excerpt:
+      'Seçim sonrasına bırakılan konut satışlarında yeni dönemde artış yaşandı. Son durum kamuoyu tarafından merak ediliyor. TÜİK verilerine göre, Nisan ayında konut satışlarında düşüş…',
+  },
+  {
+    slug: 'yeniakit-o-ilimizdeki-ev-ve-arsa-fiyatlari-ucusa-gecti-durmak-bilmiyor-1741744',
+    title: 'O ilimizdeki ev ve arsa fiyatları uçuşa geçti! Durmak bilmiyor',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/o-ilimizdeki-ev-ve-arsa-fiyatlari-ucusa-gecti-durmak-bilmiyor-1741744.htm',
+    excerpt:
+      'Kahramanmaraş\'ta merkezli depremin ardından birçok ildeki konut fiyatlarında inanılmaz artış gözlendi.',
+  },
+  {
+    slug: 'yeniakit-uzman-isimden-aciklama-geldi-bina-riskli-cikarsa-kiraci-ne-yapacak-1737737',
+    title: 'Uzman isimden açıklama geldi! Bina riskli çıkarsa kiracı ne yapacak?',
+    publication: 'Yeni Akit',
+    date: '2023-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/uzman-isimden-aciklama-geldi-bina-riskli-cikarsa-kiraci-ne-yapacak-1737737.html',
+    excerpt:
+      'Kahramanmaraş merkezli depremlerin ardından milyonlar \'Binam sağlam mı?\' sorusunun cevabını araştırmaya başladı. Riskli binalarda oturan kiracılar ise sözleşme fesih haklarının …',
+  },
+  {
+    slug: 'posta-kiracilardan-kredi-notunu-ve-sgk-dokumlerini-istiyorlar-ev-sahipleri-bunu-da-yapti-2',
+    title: 'Kiracılardan kredi notunu ve SGK dökümlerini istiyorlar! Ev sahipleri bunu da yaptı',
+    publication: 'Posta',
+    date: '2022-08-15',
+    category: 'haber',
+    url: 'https://www.posta.com.tr/ekonomi/kiracilardan-kredi-notunu-ve-sgk-dokumlerini-istiyorlar-ev-sahipleri-bunu-da-yapti-2386254',
+    excerpt:
+      'Kiralık ev bulmak fahiş fiyatlar nedeniyle zorlaşırken eli güçlenen ev sahibinin bulduğu yeni yöntemler de şaşırtıyor. Kira artış oranları İstanbul',
+  },
+  {
+    slug: 'milliyet-mimarlik-sanatla-bulustu-6800851',
+    title: 'Mimarlık, sanatla buluştu',
+    publication: 'Milliyet',
+    date: '2022-08-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/cadde/mimarlik-sanatla-bulustu-6800851',
+    excerpt:
+      'Billionare Furniture&Luxury Stone, ikinci mağazasını Bodrum Yalıkavak’ta düzenlenen etkinlikle açtı.',
+  },
+  {
+    slug: 'posta-yabancinin-konutta-bodrum-sevdasi-2308920',
+    title: 'Yabancının konutta Bodrum sevdası',
+    publication: 'Posta',
+    date: '2022-08-15',
+    category: 'haber',
+    url: 'https://www.posta.com.tr/ekonomi/yabancinin-konutta-bodrum-sevdasi-2308920',
+    excerpt:
+      'Yabancılar, pandemiye rağmen Türkiye’den konut almaya devam ediyor. Türkiye İstatistik Kurumu ( TÜİK) verilerine göre; ocakta yabancılara yapılan konut satışı...',
+  },
+  {
+    slug: 'cumhuriyet-gayrimenkul-uzmani-bankalar-konutta-kredi-musluklarini-acmali-2057579',
+    title: 'Gayrimenkul Uzmani Bankalar Konutta Kredi Musluklarini Acmali',
+    publication: 'Cumhuriyet',
+    date: '2022-07-15',
+    category: 'haber',
+    url: 'https://www.cumhuriyet.com.tr/ekonomi/gayrimenkul-uzmani-bankalar-konutta-kredi-musluklarini-acmali-2057579',
+    excerpt:
+      'Bankacılık Düzenleme ve Denetleme Kurumunun (BDDK) konut kredileri ilgili aldığı yeni kararı değerlendiren Gayrimenkul Uzmanı Şule Alp, “Bu şekilde açıklanan ama uygulanamayan k…',
+  },
+  {
+    slug: 'cumhuriyet-ev-kiralamak-bu-zamanda-atesten-gomlek-oldu-2025310',
+    title: 'Ev kiralamak bu zamanda ateşten gömlek oldu!',
+    publication: 'Cumhuriyet',
+    date: '2022-05-15',
+    category: 'haber',
+    url: 'https://www.cumhuriyet.com.tr/ekonomi/ev-kiralamak-bu-zamanda-atesten-gomlek-oldu-2025310',
+    excerpt:
+      'Büyükşehirlerde uygun fiyata kiralık ev bulmak zorlaştı. Öyle ki bazı şehirlerde paranız olsa dahi sıraya girmek zorundasınız. Bir daire için onlarca kiracı adayı ismini yazdırı…',
+  },
+  {
+    slug: 'cumhuriyet-kira-krizi-bodrumu-vurdu-ev-sahiplerinden-ilginc-sart-2021257',
+    title: 'Kira krizi Bodrum',
+    publication: 'Cumhuriyet',
+    date: '2022-05-15',
+    category: 'haber',
+    url: 'https://www.cumhuriyet.com.tr/ekonomi/kira-krizi-bodrumu-vurdu-ev-sahiplerinden-ilginc-sart-2021257',
+    excerpt:
+      'Kiralık konut sorunu tüm ülkede çığ gibi büyümeye devam ediyor. Tatilin gözde yeri Bodrum',
+  },
+  {
+    slug: 'yenigungazetesi-bankalar-konutta-kredi-musluklarini-acmali-80968h',
+    title: 'Bankalar konutta kredi musluklarını açmalı',
+    publication: 'Yeni Gün Gazetesi',
+    date: '2022-01-15',
+    category: 'haber',
+    url: 'https://www.yenigungazetesi.net/ekonomi/bankalar-konutta-kredi-musluklarini-acmali-80968h',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'yenigungazetesi-bodrum-artik-kisin-da-dolu-57531h',
+    title: 'Bodrum artık kışın da dolu',
+    publication: 'Yeni Gün Gazetesi',
+    date: '2022-01-15',
+    category: 'haber',
+    url: 'https://www.yenigungazetesi.net/ekonomi/bodrum-artik-kisin-da-dolu-57531h',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'yenigungazetesi-ev-sahiplerinden-kiram-odenmiyor-taktigi-78596h',
+    title: 'Ev sahiplerinden ‘kiram ödenmiyor’ taktiği',
+    publication: 'Yeni Gün Gazetesi',
+    date: '2022-01-15',
+    category: 'haber',
+    url: 'https://www.yenigungazetesi.net/guncel/ev-sahiplerinden-kiram-odenmiyor-taktigi-78596h',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'yenigungazetesi-evin-depreme-karsi-guvenli-oldugu-nasil-anlasilir-80133h',
+    title: 'Evin depreme karşı güvenli olduğu nasıl anlaşılır?',
+    publication: 'Yeni Gün Gazetesi',
+    date: '2022-01-15',
+    category: 'haber',
+    url: 'https://www.yenigungazetesi.net/guncel/evin-depreme-karsi-guvenli-oldugu-nasil-anlasilir-80133h',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'yenigungazetesi-gayrimenkul-uzmani-sule-alp-uyariyor-panikle-kacis-yanlis-tercihe-neden-ol',
+    title: 'Gayrimenkul uzmanı Şule Alp uyarıyor: Panikle kaçış yanlış tercihe neden olabilir',
+    publication: 'Yeni Gün Gazetesi',
+    date: '2022-01-15',
+    category: 'haber',
+    url: 'https://www.yenigungazetesi.net/ekonomi/gayrimenkul-uzmani-sule-alp-uyariyor-panikle-kacis-yanlis-tercihe-neden-olabilir-82845h',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'yeniakit-iste-liste-en-cok-hangi-ulke-vatandaslari-gayrimenkul-aldi-1596893',
+    title: 'İşte liste! En çok hangi ülke vatandaşları gayrımenkul aldı?',
+    publication: 'Yeni Akit',
+    date: '2022-01-15',
+    category: 'haber',
+    url: 'https://www.yeniakit.com.tr/haber/iste-liste-en-cok-hangi-ulke-vatandaslari-gayrimenkul-aldi-1596893.html',
+    excerpt:
+      'TÜİK konut satış istatistiklerine göre, geçen yıl genelinde 40 bin 812 adet olan yabancılara konut satışı bu yılın Ocak-Ekim döneminde 43 bin 372\'ye yükseldi. Böylelikle yabancı…',
+  },
+  {
+    slug: 'yenigungazetesi-yeni-evimde-kaparo-dolandiriciligina-dikkat-79118h',
+    title: 'Yeni Evim’de kaparo dolandırıcılığına dikkat',
+    publication: 'Yeni Gün Gazetesi',
+    date: '2022-01-15',
+    category: 'haber',
+    url: 'https://www.yenigungazetesi.net/guncel/yeni-evimde-kaparo-dolandiriciligina-dikkat-79118h',
+    excerpt:
+      'Şule Alp’in yer aldığı basın haberinin orijinal kaynağına buradan ulaşabilirsiniz.',
+  },
+  {
+    slug: 'hurriyet-emlak-vergisi-ikinci-taksit-odemeleri-basliyor-yapmayana-cezasi-var-41920974',
+    title: 'Dikkat: Milyonları ilgilendiriyor! 1 Kasım',
+    publication: 'Hürriyet',
+    date: '2021-11-15',
+    category: 'haber',
+    url: 'https://www.hurriyet.com.tr/ekonomi/emlak-vergisi-ikinci-taksit-odemeleri-basliyor-yapmayana-cezasi-var-41920974',
+    excerpt:
+      'Emlak vergisinde ikinci taksit ödemeleri 1 Kasım tarihinde başlıyor. Taksitle ödeme yapmak isteyenler için başlayan süreç 30 Kasım',
+  },
+  {
+    slug: 'hurriyet-faiz-indirimi-nasil-etkiledi-konutta-gundem-yine-fiyat-uzmanlar-uyardi-41930992',
+    title: 'Faiz indirimi nasıl etkiledi? Konutta gündem yine fiyat! Uzmanlar uyardı',
+    publication: 'Hürriyet',
+    date: '2021-11-15',
+    category: 'haber',
+    url: 'https://www.hurriyet.com.tr/ekonomi/faiz-indirimi-nasil-etkiledi-konutta-gundem-yine-fiyat-uzmanlar-uyardi-41930992',
+    excerpt:
+      'Konut fiyatları bir süredir yükseliş trendi içinde. Faiz indiriminin fiyatlardaki etkisinin ne olacağı merak konusuyken uzmanlar da bu konuda ikiye ayrılmış...',
+  },
+  {
+    slug: 'milliyet-farkindalik-icin-bir-arada-6644344',
+    title: 'Farkındalık için bir arada',
+    publication: 'Milliyet',
+    date: '2021-10-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/cadde/farkindalik-icin-bir-arada-6644344',
+    excerpt:
+      'Gayrimenkul Yatırım Uzmanı Şule Alp, önceki hafta Ayla Sezgin, Elvan Kakıcı, Aydan Baktır ve Banu Tuğcu’nun da aralarında yer aldığı Swissotel’deki ‘Yüzde 100 Farkındayız’ proje…',
+  },
+  {
+    slug: 'milliyet-luks-markalar-bulustu-6602197',
+    title: 'Lüks markalar buluştu',
+    publication: 'Milliyet',
+    date: '2021-07-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/cadde/luks-markalar-bulustu-6602197',
+    excerpt:
+      'İş ve sanat dünyasının önde gelen isimleri The Bo Viera, Aston Martin Turkey ve Panerai ev sahipliğinde Mandarin Oriental Bosphorus’ta bir araya geldi. Konuklar arasında Şule Al…',
+  },
+  {
+    slug: 'hurriyet-gayrimenkul-temsilcileri-uyardi-internetteki-buyuk-tehlike-41713795',
+    title: 'Arsa alacaklar dikkat! İnternetteki büyük tehlike',
+    publication: 'Hürriyet',
+    date: '2021-06-15',
+    category: 'haber',
+    url: 'https://www.hurriyet.com.tr/ekonomi/gayrimenkul-temsilcileri-uyardi-internetteki-buyuk-tehlike-41713795',
+    excerpt:
+      'Pandeminin etkisiyle insanların gayrimenkul alışkanlıkları da değişti. Birçok insan şehir merkezlerinden uzakta arsa alımı yaparken arsaların üstüne ise ev...',
+  },
+  {
+    slug: 'hurriyet-bodrum-yaza-hazirlaniyor-41797532',
+    title: 'Bodrum yaza hazırlanıyor',
+    publication: 'Hürriyet',
+    date: '2021-06-15',
+    category: 'haber',
+    url: 'https://www.hurriyet.com.tr/yerel-haberler/izmir/bodrum-yaza-hazirlaniyor-41797532',
+    excerpt:
+      'Ege’ye koronavirüsle başlayan ilgi devam ediyor. Özellikle Bodrum bu yaz da büyük şehirlerden kaçanların adresi olacak. İlçede gayrimenkul satışlarında...',
+  },
+  {
+    slug: 'hurriyet-bodrum-yine-gozde-41694404',
+    title: 'Bodrum yine gözde',
+    publication: 'Hürriyet',
+    date: '2021-04-15',
+    category: 'haber',
+    url: 'https://www.hurriyet.com.tr/yerel-haberler/izmir/bodrum-yine-gozde-41694404',
+    excerpt:
+      'Bodrum pandemiye rağmen yerli ve yabancı yatırımcıların ilgisini çekmeye devam ediyor. İlçede gayrimenkulden otele, hastaneden hizmet sektörüne farklı...',
+  },
+  {
+    slug: 'milliyet-oduller-dagitildi-6550842',
+    title: 'Ödüller dağıtıldı',
+    publication: 'Milliyet',
+    date: '2021-03-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/cadde/oduller-dagitildi-6550842',
+    excerpt:
+      'Türkiye ve Azerbaycan arasındaki tarihi dostluk, pekişmeye devam ediyor.',
+  },
+  {
+    slug: 'milliyet-gururlandiran-atama-6473607',
+    title: 'Gururlandıran atama',
+    publication: 'Milliyet',
+    date: '2020-08-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/cadde/gururlandiran-atama-6473607',
+    excerpt:
+      'İnşaat sektöründe 50 yılı aşkın tecrübesiyle başarıdan başarıya koşan ve fark yaratan Besa Grup’un satış ve pazarlama koordinatörü Şule Alp, yönetim kurulu toplantısında alınan …',
+  },
+  {
+    slug: 'milliyet-egitimde-korona-gocu-6457409',
+    title: 'Eğitimde korona göçü',
+    publication: 'Milliyet',
+    date: '2020-07-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/egitim/egitimde-korona-gocu-6457409',
+    excerpt:
+      'Koronavirüs nedeniyle tersine göç başlayınca yazlık ilçelerde 12 ay yaşama geçildi. Nüfusun katlanmasıyla bu bölgelerde kolejlere ve özel ders veren hocalara da ilgi arttı. Hatt…',
+  },
+  {
+    slug: 'milliyet-bodrum-son-donemin-parlayan-yildizi-6381666',
+    title: '‘Bodrum son dönemin parlayan yıldızı’',
+    publication: 'Milliyet',
+    date: '2020-06-15',
+    category: 'haber',
+    url: 'https://www.milliyet.com.tr/cadde/bodrum-son-donemin-parlayan-yildizi-6381666',
+    excerpt:
+      'Koronavirüsün Bodrum’a ilgiyi durdurmadığını belirten lüks gayrimenkul danışmanı Şule Alp, “Bodrum, son dönemin parlayan yıldızı” dedi.',
+  },
+  {
+    slug: 'cumhuriyet-kredi-faizleri-dusunce-ev-fiyatlari-firladi-1883436',
+    title: 'Kredi faizleri düşünce ev fiyatları fırladı',
+    publication: 'Cumhuriyet',
+    date: '2020-06-15',
+    category: 'haber',
+    url: 'https://www.cumhuriyet.com.tr/ekonomi/kredi-faizleri-dusunce-ev-fiyatlari-firladi-1883436',
+    excerpt:
+      'Yüksek kiralardan kurtulmak için düşük faizli kredilerden yararlanıp konut sahibi olmak isteyenler bankalara yöneldi. Ancak bu kez satılık konutların fiyatları bir hafta içinde …',
+  },
+];
+
+export function getPressBySlug(slug: string) {
+  return pressItems.find((p) => p.slug === slug);
+}
+
+export function getFeaturedPress(limit = 3) {
+  return pressItems.filter((p) => p.featured).slice(0, limit);
+}
