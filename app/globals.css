@@ -597,6 +597,7 @@ h3,
 
   .btn-primary:hover:not(:disabled):not([aria-disabled="true"]) {
     background: color-mix(in srgb, #aa6851 90%, white);
+    box-shadow: 0 10px 28px rgba(23, 20, 18, 0.12);
   }
 
   .btn-secondary:hover:not(:disabled):not([aria-disabled="true"]) {

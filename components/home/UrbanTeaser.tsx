@@ -1,13 +1,28 @@
-﻿import Image from "next/image";
+﻿"use client";
+
+import Image from "next/image";
+import { motion } from "motion/react";
+import FadeIn from "@/components/motion/FadeIn";
+import {
+  easeLuxury,
+  usePrefersReducedMotion,
+} from "@/components/motion/motionPresets";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import Reveal from "@/components/ui/Reveal";
 import { siteConfig } from "@/data/site";
 
 export default function UrbanTeaser() {
+  const reduced = usePrefersReducedMotion();
+
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0">
+      <motion.div
+        className="absolute inset-0"
+        initial={reduced ? false : { scale: 1.08 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: reduced ? 0 : 1.4, ease: easeLuxury }}
+      >
         <Image
           src="/images/urban-transformation.jpg"
           alt="Şehir silüeti — kentsel dönüşüm"
@@ -16,10 +31,10 @@ export default function UrbanTeaser() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/50" />
-      </div>
+      </motion.div>
 
       <Container className="relative z-10 py-14 md:py-20 lg:py-28">
-        <Reveal>
+        <FadeIn y={30} duration={0.85}>
           <div className="max-w-xl border border-white/10 bg-white/95 p-6 md:p-8 lg:p-10">
             <p className="eyebrow">Kentsel Dönüşüm</p>
             <h2 className="mt-3 h2 text-ink">Kentleri Dönüştüren Vizyon</h2>
@@ -38,7 +53,7 @@ export default function UrbanTeaser() {
               </Button>
             </div>
           </div>
-        </Reveal>
+        </FadeIn>
       </Container>
     </section>
   );

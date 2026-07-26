@@ -1,5 +1,8 @@
-﻿import Container from "@/components/ui/Container";
-import Reveal from "@/components/ui/Reveal";
+﻿"use client";
+
+import FadeIn from "@/components/motion/FadeIn";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+import Container from "@/components/ui/Container";
 import { siteConfig } from "@/data/site";
 
 const icons = [
@@ -48,26 +51,32 @@ const icons = [
 export default function TrustStrip() {
   return (
     <section className="relative bg-ivory">
-      <Container className="grid grid-cols-1 gap-0 py-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 sm:py-14 lg:grid-cols-4 lg:gap-0 lg:py-20">
-        {siteConfig.trustPoints.map((item, index) => (
-          <Reveal key={item.title} className="min-w-0">
-            <article
-              className={`min-w-0 border-b border-[rgba(170,104,81,0.14)] py-7 last:border-b-0 sm:border-b-0 sm:py-0 lg:px-7 ${
-                index > 0 ? "lg:border-l lg:border-[rgba(170,104,81,0.14)]" : ""
-              }`}
-            >
-              <span className="mb-4 inline-flex text-accent" aria-hidden>
-                {icons[index % icons.length]}
-              </span>
-              <h2 className="font-serif text-[1.35rem] leading-[1.2] font-normal tracking-[-0.01em] text-ink md:text-[1.5rem]">
-                {item.title}
-              </h2>
-              <p className="mt-2.5 max-w-[22rem] text-[14px] leading-[1.65] text-muted md:text-[15px]">
-                {item.description}
-              </p>
-            </article>
-          </Reveal>
-        ))}
+      <Container>
+        <Stagger
+          className="grid grid-cols-1 gap-0 py-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 sm:py-14 lg:grid-cols-4 lg:gap-0 lg:py-20"
+          delayChildren={0.06}
+          staggerChildren={0.1}
+        >
+          {siteConfig.trustPoints.map((item, index) => (
+            <StaggerItem key={item.title} className="min-w-0" y={22}>
+              <article
+                className={`min-w-0 border-b border-[rgba(170,104,81,0.14)] py-7 last:border-b-0 sm:border-b-0 sm:py-0 lg:px-7 ${
+                  index > 0 ? "lg:border-l lg:border-[rgba(170,104,81,0.14)]" : ""
+                }`}
+              >
+                <span className="mb-4 inline-flex text-accent" aria-hidden>
+                  {icons[index % icons.length]}
+                </span>
+                <h2 className="font-serif text-[1.35rem] leading-[1.2] font-normal tracking-[-0.01em] text-ink md:text-[1.5rem]">
+                  {item.title}
+                </h2>
+                <p className="mt-2.5 max-w-[22rem] text-[14px] leading-[1.65] text-muted md:text-[15px]">
+                  {item.description}
+                </p>
+              </article>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </Container>
     </section>
   );

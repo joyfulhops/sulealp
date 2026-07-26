@@ -1,13 +1,15 @@
-﻿import Button from "@/components/ui/Button";
+﻿"use client";
+
+import FadeIn from "@/components/motion/FadeIn";
+import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import Reveal from "@/components/ui/Reveal";
 import { siteConfig } from "@/data/site";
 
 export default function ContactCta() {
   return (
     <section className="bg-surface py-14 md:py-[var(--section-y)]">
       <Container className="grid items-center gap-8 md:gap-10 lg:grid-cols-[1.3fr_1fr_auto]">
-        <Reveal>
+        <FadeIn y={24}>
           <h2 className="font-serif text-[2rem] leading-[1.12] font-normal tracking-[-0.02em] text-ink md:h2">
             Doğru Zamanda, Doğru Karar İçin Görüşelim
           </h2>
@@ -15,8 +17,8 @@ export default function ContactCta() {
             Özel görüşme talebinizi iletin; hedeflerinize uygun bir yol haritası
             oluşturalım.
           </p>
-        </Reveal>
-        <Reveal>
+        </FadeIn>
+        <FadeIn delay={0.1} y={20}>
           <ul className="space-y-1 text-[15px] text-muted">
             <li>
               <a
@@ -38,15 +40,15 @@ export default function ContactCta() {
               {siteConfig.address.locality}, {siteConfig.address.country}
             </li>
           </ul>
-        </Reveal>
-        <Reveal className="w-full lg:w-auto">
+        </FadeIn>
+        <FadeIn className="w-full lg:w-auto" delay={0.18} y={16}>
           <Button
             href="/iletisim"
             className="!h-[52px] !min-h-[52px] w-full !px-6 lg:w-auto"
           >
             Özel Görüşme Talep Et
           </Button>
-        </Reveal>
+        </FadeIn>
       </Container>
     </section>
   );

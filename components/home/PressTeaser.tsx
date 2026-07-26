@@ -1,7 +1,10 @@
-﻿import Image from "next/image";
+﻿"use client";
+
+import Image from "next/image";
+import FadeIn from "@/components/motion/FadeIn";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { getFeaturedPress } from "@/data/press";
 
@@ -19,17 +22,21 @@ export default function PressTeaser() {
   return (
     <section className="section-y bg-ivory">
       <Container>
-        <Reveal>
+        <FadeIn>
           <SectionHeading
             eyebrow="Medya"
             title="Basında Şule Alp"
             align="center"
           />
-        </Reveal>
+        </FadeIn>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <Stagger
+          className="mt-12 grid gap-6 md:grid-cols-3"
+          delayChildren={0.08}
+          staggerChildren={0.12}
+        >
           {items.map((item) => (
-            <Reveal key={item.slug}>
+            <StaggerItem key={item.slug} y={28}>
               <a
                 href={item.url}
                 target="_blank"
@@ -52,9 +59,7 @@ export default function PressTeaser() {
                   <p className="text-[12px] font-semibold tracking-[0.12em] text-accent uppercase">
                     {item.publication}
                   </p>
-                  <h3 className="mt-2 h3 text-ink">
-                    {item.title}
-                  </h3>
+                  <h3 className="mt-2 h3 text-ink">{item.title}</h3>
                   <p className="mt-2 text-sm text-muted">{formatDate(item.date)}</p>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                     {item.excerpt}
@@ -64,15 +69,15 @@ export default function PressTeaser() {
                   </span>
                 </div>
               </a>
-            </Reveal>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
-        <div className="mt-10 flex justify-center">
+        <FadeIn className="mt-10 flex justify-center" delay={0.15}>
           <Button href="/basinda" variant="ghost" className="w-full sm:w-auto">
             Tüm Haberleri Görüntüle
           </Button>
-        </div>
+        </FadeIn>
       </Container>
     </section>
   );
