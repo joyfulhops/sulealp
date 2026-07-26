@@ -32,8 +32,8 @@ export default function HomePage() {
           websiteSchema(),
         ])}
       />
-      <Hero />
       <OpeningStatement />
+      <Hero />
       <TrustStrip />
       <AboutTeaser />
       <ServicesGrid />

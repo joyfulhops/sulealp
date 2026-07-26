@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="hero-seamless relative overflow-x-clip pt-[var(--header-h)]">
+    <section className="hero-seamless relative overflow-x-clip">
       {/* Desktop villa */}
       <div className="hero-media" aria-hidden>
         <div className="hero-media-frame">

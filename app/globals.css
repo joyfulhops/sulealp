@@ -1368,7 +1368,8 @@ h3,
 
 /* —— Home: Opening manifesto + signature —— */
 .opening-statement {
-  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  padding-top: calc(var(--header-h) + clamp(2.5rem, 5vw, 4rem));
+  padding-bottom: clamp(3.5rem, 8vw, 6.5rem);
   border-bottom: 1px solid rgba(170, 104, 81, 0.12);
 }
 
