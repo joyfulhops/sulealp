@@ -8,20 +8,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticRoutes = [
-    "",
-    "/hakkinda",
-    "/hizmetler",
-    "/kentsel-donusum",
-    "/basinda",
-    "/iletisim",
-    "/gizlilik-politikasi",
-    "/kvkk-aydinlatma-metni",
-    "/cerez-politikasi",
-  ].map((path) => ({
-    url: `${base}${path}`,
+    { path: "", priority: 1, changeFrequency: "weekly" as const },
+    { path: "/hakkinda", priority: 0.95, changeFrequency: "weekly" as const },
+    { path: "/hizmetler", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/kentsel-donusum", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/basinda", priority: 0.75, changeFrequency: "weekly" as const },
+    { path: "/iletisim", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/gizlilik-politikasi", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/kvkk-aydinlatma-metni", priority: 0.3, changeFrequency: "yearly" as const },
+    { path: "/cerez-politikasi", priority: 0.3, changeFrequency: "yearly" as const },
+  ].map((route) => ({
+    url: `${base}${route.path}`,
     lastModified: now,
-    changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
-    priority: path === "" ? 1 : 0.7,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
   }));
 
   const serviceRoutes = services.map((s) => ({

@@ -10,14 +10,21 @@ import { getFeaturedPress } from "@/data/press";
 import { siteConfig } from "@/data/site";
 import { timeline } from "@/data/timeline";
 import { trainings } from "@/data/training";
-import { buildMetadata } from "@/lib/metadata";
-import { jsonLdGraph, personSchema } from "@/lib/schema";
+import { buildMetadata, absoluteUrl } from "@/lib/metadata";
+import {
+  aboutPageSchema,
+  breadcrumbSchema,
+  jsonLdGraph,
+  organizationSchema,
+  personSchema,
+} from "@/lib/schema";
 
 export const metadata = buildMetadata({
   title: "Şule Alp Kimdir? | Gayrimenkul ve Yatırım Danışmanı",
   description:
-    "Şule Alp’in gayrimenkul, yatırım danışmanlığı, satış ve pazarlama yönetimi, kentsel dönüşüm ve CNBC-e Kentler Dönüşüyor programındaki kariyerini keşfedin.",
+    "Şule Alp kimdir? Gayrimenkul, yatırım danışmanlığı, satış ve pazarlama yönetimi, kentsel dönüşüm ve CNBC-e Kentler Dönüşüyor programı sunucusu hakkında resmi biyografi.",
   path: "/hakkinda",
+  image: "/images/sule-alp-portrait.jpg",
 });
 
 export default function AboutPage() {
@@ -27,12 +34,21 @@ export default function AboutPage() {
     <>
       <JsonLd
         data={jsonLdGraph([
+          breadcrumbSchema([
+            { name: "Ana Sayfa", path: "/" },
+            { name: "Hakkında", path: "/hakkinda" },
+          ]),
+          aboutPageSchema(),
           {
             "@type": "ProfilePage",
-            "@id": `${siteConfig.url}/hakkinda#profile`,
-            mainEntity: { "@id": `${siteConfig.url}/#person` },
+            "@id": absoluteUrl("/hakkinda#profile"),
+            url: absoluteUrl("/hakkinda"),
+            name: "Şule Alp Kimdir?",
+            mainEntity: { "@id": absoluteUrl("/#person") },
+            about: { "@id": absoluteUrl("/#person") },
           },
           personSchema(),
+          organizationSchema(),
         ])}
       />
 

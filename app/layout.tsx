@@ -38,6 +38,16 @@ export const metadata: Metadata = {
     icon: [{ url: "/images/signature.png", type: "image/png" }],
     apple: [{ url: "/images/signature.png" }],
   },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ||
+  process.env.GOOGLE_SITE_VERIFICATION?.trim()
+    ? {
+        verification: {
+          google:
+            process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ||
+            process.env.GOOGLE_SITE_VERIFICATION!.trim(),
+        },
+      }
+    : {}),
 };
 
 export const viewport: Viewport = {

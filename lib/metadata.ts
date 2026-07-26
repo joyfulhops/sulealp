@@ -27,6 +27,9 @@ export function buildMetadata({
 }: BuildMetadataInput): Metadata {
   const url = absoluteUrl(path);
   const ogImage = absoluteUrl(image);
+  const verificationId =
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() ||
+    process.env.GOOGLE_SITE_VERIFICATION?.trim();
 
   return {
     title,
@@ -35,6 +38,9 @@ export function buildMetadata({
     robots: noIndex
       ? { index: false, follow: false }
       : { index: true, follow: true },
+    ...(verificationId
+      ? { verification: { google: verificationId } }
+      : {}),
     openGraph: {
       type: "website",
       locale: siteConfig.locale,

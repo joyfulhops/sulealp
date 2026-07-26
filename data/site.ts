@@ -5,7 +5,7 @@ export const siteConfig = {
   titleDefault: "Şule Alp | Gayrimenkul ve Yatırım Danışmanı",
   descriptionDefault:
     "Şule Alp’in lüks gayrimenkul, yatırım stratejisi ve kentsel dönüşüm alanındaki deneyimini, hizmetlerini ve basın çalışmalarını keşfedin.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sulealp.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.sulealp.com",
   locale: "tr_TR",
   language: "tr",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "alpsule@hotmail.com",
