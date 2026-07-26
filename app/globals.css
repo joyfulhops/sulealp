@@ -1475,7 +1475,7 @@ h3,
 
 .about-teaser-photo img {
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 12%;
 }
 
 @media (min-width: 1024px) {

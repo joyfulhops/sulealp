@@ -18,7 +18,7 @@ export default function AboutTeaser() {
               alt="Şule Alp"
               fill
               priority
-              className="object-cover object-[center_20%]"
+              className="object-cover object-[center_12%]"
               sizes="(max-width: 1023px) 90vw, 42vw"
             />
           </div>
