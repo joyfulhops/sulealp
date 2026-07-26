@@ -1406,11 +1406,12 @@ h3,
   flex-direction: column;
   align-items: flex-start;
   gap: 0.65rem;
+  margin-left: -0.35rem;
 }
 
 .opening-statement-signature {
   display: block !important;
-  margin: 0 !important;
+  margin: 0 0 0 -0.55rem !important;
   max-width: 168px !important;
   height: auto !important;
   object-fit: contain !important;
@@ -1418,7 +1419,12 @@ h3,
 }
 
 @media (min-width: 768px) {
+  .opening-statement-sign {
+    margin-left: -0.5rem;
+  }
+
   .opening-statement-signature {
+    margin-left: -0.75rem !important;
     max-width: 200px !important;
   }
 }
