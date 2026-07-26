@@ -1366,6 +1366,71 @@ h3,
   padding-block: var(--section-y);
 }
 
+/* —— Home: Opening manifesto + signature —— */
+.opening-statement {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  border-bottom: 1px solid rgba(170, 104, 81, 0.12);
+}
+
+.opening-statement-inner {
+  max-width: 42rem;
+}
+
+.opening-statement-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.opening-statement-body p {
+  margin: 0;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #3a342f;
+}
+
+.opening-statement-lead {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+  letter-spacing: -0.01em;
+  color: #1a1715 !important;
+}
+
+.opening-statement-sign {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.opening-statement-signature {
+  display: block !important;
+  margin: 0 !important;
+  max-width: 168px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+
+@media (min-width: 768px) {
+  .opening-statement-signature {
+    max-width: 200px !important;
+  }
+}
+
+.opening-statement-name {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #aa6851;
+}
+
 /* —— Home: About teaser (architectural balance) —— */
 .about-teaser-grid {
   display: grid;

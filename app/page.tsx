@@ -1,6 +1,7 @@
 import AboutTeaser from "@/components/home/AboutTeaser";
 import ContactCta from "@/components/home/ContactCta";
 import Hero from "@/components/home/Hero";
+import OpeningStatement from "@/components/home/OpeningStatement";
 import PressTeaser from "@/components/home/PressTeaser";
 import ServicesGrid from "@/components/home/ServicesGrid";
 import TrustStrip from "@/components/home/TrustStrip";
@@ -32,6 +33,7 @@ export default function HomePage() {
         ])}
       />
       <Hero />
+      <OpeningStatement />
       <TrustStrip />
       <AboutTeaser />
       <ServicesGrid />
